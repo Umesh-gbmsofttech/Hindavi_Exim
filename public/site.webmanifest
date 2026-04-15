@@ -1,0 +1,20 @@
+{
+  "name": "Hindavi Exim",
+  "short_name": "Hindavi",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f9f2",
+  "theme_color": "#102a43",
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
