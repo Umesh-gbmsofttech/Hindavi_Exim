@@ -15,13 +15,63 @@ import ScrollToTop from "./component/ui/ScrollToTop";
 
 const theme = createTheme({
   palette: {
-    primary: { main: "#4f2815" },
-    secondary: { main: "#d45637" },
-    background: { default: "#ffffff" },
+    primary: {
+      main: "#5d331d",
+      dark: "#2f170d",
+      light: "#8f5b41",
+    },
+    secondary: {
+      main: "#d98936",
+      dark: "#a9621d",
+      light: "#f3c178",
+    },
+    background: {
+      default: "#f8f4ef",
+      paper: "#ffffff",
+    },
+    text: {
+      primary: "#1f1a17",
+      secondary: "#655750",
+    },
+  },
+  shape: {
+    borderRadius: 18,
   },
   typography: {
-    fontFamily: '"Inter", "Roboto", sans-serif',
+    fontFamily: '"Segoe UI", "Inter", "Roboto", sans-serif',
     h1: { fontWeight: 800 },
+    h2: { fontWeight: 800 },
+    h3: { fontWeight: 800 },
+    h4: { fontWeight: 700 },
+    button: {
+      fontWeight: 700,
+      textTransform: "none",
+      letterSpacing: 0.2,
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 999,
+          paddingInline: 24,
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundImage: "none",
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          backgroundImage: "none",
+        },
+      },
+    },
   },
 });
 

@@ -6,30 +6,27 @@ import {
   Grid,
   Button,
   Stack,
+  Chip,
 } from "@mui/material";
 
-import exportImg from "../../assets/export.jpg";
-import importImg from "../../assets/import.jpg";
+import exportImg from "../../assets/img4.webp";
+import importImg from "../../assets/img5.webp";
 
-/* =========================
-   💎 PREMIUM SPLIT SECTION
-========================= */
 const ServiceRow = ({ image, title, description, reverse }) => {
   return (
-    <Box sx={{ py: { xs: 6, md: 10 } }}>
+    <Box sx={{ py: { xs: 4, md: 6 } }}>
       <Grid
         container
         alignItems="center"
-        spacing={6}
+        spacing={{ xs: 4, md: 7 }}
         direction={reverse ? "row-reverse" : "row"}
       >
-        {/* IMAGE */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Box
             sx={{
-              borderRadius: "20px",
+              borderRadius: 6,
               overflow: "hidden",
-              position: "relative",
+              boxShadow: "0 22px 52px rgba(47,23,13,0.12)",
             }}
           >
             <Box
@@ -38,55 +35,22 @@ const ServiceRow = ({ image, title, description, reverse }) => {
               alt={title}
               sx={{
                 width: "100%",
-                height: { xs: 260, md: 420 },
+                height: { xs: 280, md: 430 },
                 objectFit: "cover",
-                transition: "transform 0.6s ease",
-              }}
-            />
-
-            {/* subtle overlay effect */}
-            <Box
-              sx={{
-                position: "absolute",
-                inset: 0,
-                background:
-                  "linear-gradient(to top, rgba(0,0,0,0.15), transparent)",
-                opacity: 0,
-                transition: "0.4s",
-              }}
-            />
-
-            {/* hover effect */}
-            <Box
-              sx={{
-                position: "absolute",
-                inset: 0,
-                "&:hover img": {
-                  transform: "scale(1.06)",
-                },
-                "&:hover div": {
-                  opacity: 1,
-                },
               }}
             />
           </Box>
         </Grid>
 
-        {/* CONTENT */}
-        <Grid item xs={12} md={6}>
-          <Box
-            sx={{
-              maxWidth: 520,
-              mx: { xs: "auto", md: reverse ? "0" : "auto" },
-            }}
-          >
+        <Grid size={{ xs: 12, md: 6 }}>
+          <Box sx={{ maxWidth: 540, mx: { xs: "auto", md: reverse ? 0 : "auto" } }}>
             <Typography
               sx={{
                 fontWeight: 800,
-                fontSize: { xs: "1.7rem", md: "2.2rem" },
-                color: "#111",
+                fontSize: { xs: "1.85rem", md: "2.4rem" },
+                color: "primary.main",
                 mb: 2,
-                lineHeight: 1.3,
+                lineHeight: 1.2,
               }}
             >
               {title}
@@ -94,32 +58,17 @@ const ServiceRow = ({ image, title, description, reverse }) => {
 
             <Typography
               sx={{
-                color: "#666",
+                color: "text.secondary",
                 fontSize: "1rem",
                 lineHeight: 1.9,
-                mb: 4,
+                mb: 3,
               }}
             >
               {description}
             </Typography>
 
-            <Button
-              variant="contained"
-              sx={{
-                borderRadius: "40px",
-                px: 5,
-                py: 1.4,
-                fontWeight: 600,
-                textTransform: "none",
-                background: "#000",
-                fontSize: "0.95rem",
-
-                "&:hover": {
-                  background: "#222",
-                },
-              }}
-            >
-              Learn More →
+            <Button variant="contained" color="secondary">
+              Explore Service
             </Button>
           </Box>
         </Grid>
@@ -128,58 +77,53 @@ const ServiceRow = ({ image, title, description, reverse }) => {
   );
 };
 
-/* =========================
-   🌍 SERVICES SECTION
-========================= */
 const ServicesSection = () => {
   return (
     <Box
       sx={{
-        py: { xs: 8, md: 14 },
-        background: "#f6f7fb",
+        py: { xs: 9, md: 13 },
+        background: "#ffffff",
       }}
     >
       <Container maxWidth="lg">
-        {/* HEADER */}
-        <Stack spacing={2} textAlign="center" mb={12}>
+        <Stack spacing={2} textAlign="center" mb={{ xs: 6, md: 8 }} alignItems="center">
+          <Chip label="Our Services" color="secondary" sx={{ fontWeight: 700 }} />
           <Typography
             sx={{
               fontWeight: 800,
               fontSize: { xs: "2rem", md: "3rem" },
-              color: "#111",
+              color: "primary.main",
+              maxWidth: 760,
             }}
           >
-            Our Services
+            Services aligned around smoother export execution and better buyer confidence.
           </Typography>
 
           <Typography
             sx={{
-              color: "#666",
-              maxWidth: 650,
-              mx: "auto",
+              color: "text.secondary",
+              maxWidth: 700,
               fontSize: "1.05rem",
               lineHeight: 1.9,
             }}
           >
-            Seamlessly connecting global markets, we specialize in efficient
-            import and export of goods, ensuring reliability, speed, and
-            precision every step of the way.
+            We present our services in a simpler structure so visitors can
+            quickly understand what Hindavi Exim actually helps with and why the
+            process feels more dependable.
           </Typography>
         </Stack>
 
-        {/* SECTION 1 → IMAGE LEFT, CONTENT RIGHT */}
         <ServiceRow
           image={exportImg}
-          title="Ready to Elevate Your Business with Premium Exports?"
-          description="At Avadis, we don't just export products; we deliver excellence and reliability to your doorstep. Whether you need high-quality copper wire rods, durable bitumen, or fresh fruits and vegetables, our team ensures seamless and timely delivery."
+          title="Sourcing and export support built around practical trade needs."
+          description="We help align products, communication, and export readiness so buyers can move forward with clearer expectations and stronger confidence."
         />
 
-        {/* SECTION 2 → CONTENT LEFT, IMAGE RIGHT */}
         <ServiceRow
           image={importImg}
           reverse
-          title="Are you ready to transform your business through importing high-quality goods?"
-          description="At Avadis Tejarat Mahan, we provide reliable import services, delivering top-quality products directly to your business. From sourcing premium raw materials to supplying electronics, we ensure efficiency and quality."
+          title="Documentation, shipment coordination, and responsive execution."
+          description="From planning to dispatch, our service approach is designed to reduce friction, improve visibility, and support more reliable cross-border movement."
         />
       </Container>
     </Box>

@@ -1,196 +1,94 @@
-// src/components/sections/FoundersPerspective.jsx
-import React, { useEffect, useState } from "react";
-import {
-  Paper,
-  Typography,
-  Box,
-  Avatar,
-  Grid,
-  IconButton,
-} from "@mui/material";
-import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import { Paper, Typography, Box, Grid, Stack, Chip } from "@mui/material";
+import FormatQuoteRoundedIcon from "@mui/icons-material/FormatQuoteRounded";
+import TaskAltRoundedIcon from "@mui/icons-material/TaskAltRounded";
+import { motion } from "framer-motion";
 
-const founders = [
- 
-  {
-    name: "Rohan Sharma",
-    role: "Director, Indo Global Logistics",
-    quote:
-      "Our mission is to connect India to the world with seamless logistics.",
-    image: "https://randomuser.me/api/portraits/men/45.jpg",
-  },
-  {
-    name: "Vikram Patel",
-    role: "Export Head, Bharat Supply Chain",
-    quote:
-      "We believe in building long-term trade relationships, not just transactions.",
-    image: "https://randomuser.me/api/portraits/men/52.jpg",
-  },
-  {
-    name: "Aditya Kulkarni",
-    role: "CEO, OceanLink Exports",
-    quote:
-      "Every container we ship represents India's growing global presence.",
-    image: "https://randomuser.me/api/portraits/men/60.jpg",
-  },
-  {
-    name: "Karan Desai",
-    role: "Managing Director, Global Trade Hub",
-    quote:
-      "Efficiency and trust define modern export excellence.",
-    image: "https://randomuser.me/api/portraits/men/41.jpg",
-  },
-  {
-    name: "Arjun Nair",
-    role: "Founder, Seaway Logistics",
-    quote:
-      "Logistics is not just movement of goods, it is movement of opportunity.",
-    image: "https://randomuser.me/api/portraits/men/36.jpg",
-  },
-  {
-    name: "Siddharth Iyer",
-    role: "Director, Indian Export Network",
-    quote:
-      "We empower Indian businesses to think and trade globally.",
-    image: "https://randomuser.me/api/portraits/men/28.jpg",
-  },
-  {
-    name: "Rahul Verma",
-    role: "CEO, ExportMax India",
-    quote:
-      "Quality, consistency, and commitment define our export philosophy.",
-    image: "https://randomuser.me/api/portraits/men/22.jpg",
-  },
-  {
-    name: "Nikhil Joshi",
-    role: "Founder, BlueOcean Trade",
-    quote:
-      "We bridge continents through reliable trade infrastructure.",
-    image: "https://randomuser.me/api/portraits/men/18.jpg",
-  },
-  {
-    name: "Manish Gupta",
-    role: "MD, Global Freight Solutions",
-    quote:
-      "India is not just exporting goods, we are exporting trust.",
-    image: "https://randomuser.me/api/portraits/men/55.jpg",
-  },
+const highlights = [
+  "Thoughtful buyer communication",
+  "Export readiness before dispatch",
+  "Execution that respects timelines and quality expectations",
 ];
 
-const variants = {
-  hidden: { opacity: 0, x: 40 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
-  exit: { opacity: 0, x: -40, transition: { duration: 0.4 } },
-};
-
 const FoundersPerspective = () => {
-  const [index, setIndex] = useState(0);
-
-  // AUTO SWAP
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % founders.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const next = () => setIndex((prev) => (prev + 1) % founders.length);
-  const prev = () =>
-    setIndex((prev) => (prev - 1 + founders.length) % founders.length);
-
-  const founder = founders[index];
-
   return (
-    <Box sx={{ py: 10 }}>
+    <Box sx={{ py: { xs: 8, md: 10 } }}>
       <Paper
         elevation={0}
         sx={{
-          p: { xs: 4, md: 8 },
+          p: { xs: 3, md: 5 },
+          borderRadius: 6,
           bgcolor: "primary.main",
-          color: "white",
-          borderRadius: 4,
+          color: "common.white",
           position: "relative",
           overflow: "hidden",
+          boxShadow: "0 28px 64px rgba(47,23,13,0.18)",
         }}
       >
-        <Grid container spacing={4} alignItems="center">
-
-          {/* IMAGE SIDE */}
-          <Grid item xs={12} md={4} sx={{ textAlign: "center" }}>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={founder.image}
-                variants={variants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              >
-                <Avatar
-                  src={founder.image}
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "radial-gradient(circle at top right, rgba(243,193,120,0.2), transparent 34%)",
+          }}
+        />
+        <Grid container spacing={{ xs: 3, md: 5 }} alignItems="center" sx={{ position: "relative", zIndex: 1 }}>
+          <Grid size={{ xs: 12, md: 7 }}>
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <Stack spacing={2.5}>
+                <Chip
+                  label="Leadership Perspective"
                   sx={{
-                    width: 180,
-                    height: 180,
-                    margin: "auto",
-                    border: "5px solid white",
-                    boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
+                    width: "fit-content",
+                    bgcolor: "rgba(255,255,255,0.12)",
+                    color: "common.white",
+                    border: "1px solid rgba(255,255,255,0.14)",
                   }}
                 />
-              </motion.div>
-            </AnimatePresence>
+                <FormatQuoteRoundedIcon sx={{ fontSize: 54, color: "secondary.light", opacity: 0.9 }} />
+                <Typography
+                  variant="h4"
+                  sx={{ lineHeight: 1.45, fontWeight: 600, maxWidth: 680 }}
+                >
+                  We believe credibility in export business is earned through
+                  preparation, responsiveness, and consistent delivery, not
+                  through overstatement.
+                </Typography>
+                <Typography sx={{ color: "rgba(255,255,255,0.74)", lineHeight: 1.8 }}>
+                  Hindavi Exim is focused on being dependable where it matters
+                  most: product alignment, shipment coordination, and partner
+                  confidence from inquiry to dispatch.
+                </Typography>
+              </Stack>
+            </motion.div>
           </Grid>
 
-          {/* CONTENT SIDE */}
-          <Grid item xs={12} md={8}>
-            <FormatQuoteIcon sx={{ fontSize: 60, opacity: 0.3 }} />
-
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={index}
-                variants={variants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              >
-                <Typography
-                  variant="h5"
-                  sx={{ fontStyle: "italic", mb: 3, lineHeight: 1.8 }}
+          <Grid size={{ xs: 12, md: 5 }}>
+            <Stack spacing={2}>
+              {highlights.map((item) => (
+                <Paper
+                  key={item}
+                  elevation={0}
+                  sx={{
+                    p: 2.2,
+                    borderRadius: 4,
+                    bgcolor: "rgba(255,255,255,0.08)",
+                    border: "1px solid rgba(255,255,255,0.12)",
+                  }}
                 >
-                  "{founder.quote}"
-                </Typography>
-
-                <Typography
-                  variant="h6"
-                  sx={{ fontWeight: "bold", color: "secondary.main" }}
-                >
-                  {founder.name}
-                </Typography>
-
-                <Typography variant="subtitle2">
-                  {founder.role}
-                </Typography>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* CONTROLS */}
-            <Box sx={{ mt: 3, display: "flex", gap: 2 }}>
-              <IconButton
-                onClick={prev}
-                sx={{ color: "white", border: "1px solid white" }}
-              >
-                <ArrowBackIosNewIcon fontSize="small" />
-              </IconButton>
-
-              <IconButton
-                onClick={next}
-                sx={{ color: "white", border: "1px solid white" }}
-              >
-                <ArrowForwardIosIcon fontSize="small" />
-              </IconButton>
-            </Box>
+                  <Stack direction="row" spacing={1.5} alignItems="center">
+                    <TaskAltRoundedIcon sx={{ color: "secondary.light" }} />
+                    <Typography>{item}</Typography>
+                  </Stack>
+                </Paper>
+              ))}
+            </Stack>
           </Grid>
         </Grid>
       </Paper>

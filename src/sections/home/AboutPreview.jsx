@@ -6,194 +6,136 @@ import {
   Grid,
   Button,
   Stack,
+  Chip,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import turmericImage from "../../assets/export.jpg";
+import aboutImage from "../../assets/img3.webp";
 
 const AboutPreview = () => {
   return (
     <Box
       component="section"
       sx={{
-        py: { xs: 10, md: 14 },
-        background: "#f8f8f8", // 🔥 light grey like reference
+        py: { xs: 9, md: 13 },
+        background: "linear-gradient(180deg, #f7f1eb 0%, #fffdfb 100%)",
       }}
     >
       <Container maxWidth="lg">
         <Grid
           container
+          spacing={{ xs: 4, md: 7 }}
           alignItems="center"
-          justifyContent="space-between"
-          sx={{
-            flexWrap: { xs: "wrap", md: "nowrap" },
-            gap: { xs: 6, md: 10 }, // 🔥 spacing between image & content
-          }}
         >
-          {/* LEFT IMAGE */}
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <motion.div
-              initial={{ opacity: 0, x: -60 }}
+              initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.65 }}
             >
               <Box
                 sx={{
                   position: "relative",
-                  width: "100%",
-                  height: "100%",
-                  maxWidth: 720,
+                  borderRadius: 6,
+                  overflow: "hidden",
+                  boxShadow: "0 24px 60px rgba(47,23,13,0.14)",
                 }}
               >
                 <Box
                   component="img"
-                  src={turmericImage}
-                  alt="Export"
+                  src={aboutImage}
+                  alt="Hindavi Exim sourcing and export operations"
                   sx={{
                     width: "100%",
-                    height: "480px",
-                    borderRadius: "24px",
-                    boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
+                    height: { xs: 320, md: 520 },
+                    objectFit: "cover",
                   }}
                 />
 
-                {/* Badge */}
                 <Box
                   sx={{
                     position: "absolute",
-                    bottom: 20,
-                    left: 20,
-                    bgcolor: "#fff",
-                    px: 3,
-                    py: 1.2,
-                    borderRadius: "14px",
-                    boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+                    left: 24,
+                    bottom: 24,
+                    px: 2.5,
+                    py: 1.4,
+                    borderRadius: 4,
+                    bgcolor: "rgba(255,255,255,0.92)",
+                    boxShadow: "0 12px 28px rgba(47,23,13,0.12)",
                   }}
                 >
-                  <Typography
-                    sx={{
-                      fontWeight: 700,
-                      color: "#ff8a00",
-                      fontSize: "0.9rem",
-                    }}
-                  >
-                    15+ Years
+                  <Typography sx={{ fontWeight: 800, color: "primary.main" }}>
+                    Quality-led export approach
                   </Typography>
                 </Box>
               </Box>
             </motion.div>
           </Grid>
 
-          {/* RIGHT CONTENT */}
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <motion.div
-              initial={{ opacity: 0, x: 60 }}
+              initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.65 }}
             >
-              <Stack spacing={3} maxWidth={560}>
-                
-                {/* TAG */}
+              <Stack spacing={3} sx={{ maxWidth: 560 }}>
+                <Chip
+                  label="About Hindavi Exim"
+                  color="secondary"
+                  sx={{ width: "fit-content", fontWeight: 700 }}
+                />
+
                 <Typography
                   sx={{
-                    color: "#ff8a00",
-                    fontWeight: 700,
-                    fontSize: "0.75rem",
-                    letterSpacing: 2,
+                    fontWeight: 800,
+                    fontSize: { xs: "2rem", md: "3rem" },
+                    lineHeight: 1.12,
+                    color: "primary.main",
                   }}
                 >
-                  ABOUT OUR COMPANY
+                  A more dependable way to present Indian export capability.
                 </Typography>
 
-                {/* HEADING */}
-                <Typography
-                  sx={{
-                    fontWeight: 900,
-                    fontSize: { xs: "2rem", md: "2.8rem" },
-                    lineHeight: 1.2,
-                    color: "#222",
-                  }}
-                >
-                  Exporting Premium <br />
-                  <Box component="span" sx={{ color: "#ff8a00" }}>
-                    Turmeric Worldwide
-                  </Box>
-                </Typography>
-
-                {/* DESCRIPTION */}
                 <Typography
                   sx={{
                     fontSize: "1rem",
-                    color: "#666",
-                    lineHeight: 1.8,
-                    maxWidth: 500,
+                    color: "text.secondary",
+                    lineHeight: 1.9,
                   }}
                 >
-                  We export high-quality turmeric sourced directly from Indian
-                  farms. Our focus is on purity, consistency, and global quality
-                  standards.
-                  <br />
-                  <br />
-                  With a strong supply chain, we ensure reliable delivery and
-                  competitive pricing worldwide.
+                  Hindavi Exim is positioned around straightforward trade
+                  communication, disciplined sourcing, and export execution that
+                  feels organized from inquiry through dispatch.
                 </Typography>
 
-                {/* FEATURES INLINE */}
-                <Stack
-                  direction="row"
-                  flexWrap="wrap"
-                  gap={3}
-                >
+                <Stack spacing={1.6}>
                   {[
-                    "High-Curcumin Quality",
-                    "Direct Farm Sourcing",
-                    "Global Shipping",
-                    "Quality Certified",
-                  ].map((item, i) => (
+                    "Clearer buyer communication",
+                    "Supply and shipment coordination",
+                    "Documentation support that reduces friction",
+                    "A more trustworthy presentation of capabilities",
+                  ].map((item) => (
                     <Stack
-                      key={i}
+                      key={item}
                       direction="row"
-                      spacing={1}
+                      spacing={1.4}
                       alignItems="center"
                     >
-                      <CheckCircleIcon
-                        sx={{ color: "#ff8a00", fontSize: 20 }}
-                      />
-                      <Typography
-                        sx={{
-                          fontSize: "0.9rem",
-                          fontWeight: 600,
-                          color: "#333",
-                        }}
-                      >
+                      <CheckCircleIcon sx={{ color: "secondary.main", fontSize: 20 }} />
+                      <Typography sx={{ fontWeight: 600, color: "text.primary" }}>
                         {item}
                       </Typography>
                     </Stack>
                   ))}
                 </Stack>
 
-                {/* BUTTON */}
-                <Box pt={2}>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      bgcolor: "#ff8a00",
-                      px: 5,
-                      py: 1.6,
-                      borderRadius: "40px",
-                      fontWeight: 700,
-                      fontSize: "0.9rem",
-                      boxShadow: "0 12px 30px rgba(255,138,0,0.35)",
-                      "&:hover": {
-                        bgcolor: "#ff9f33",
-                        transform: "translateY(-2px)",
-                      },
-                    }}
-                  >
-                    EXPLORE PRODUCTS
+                <Box pt={1}>
+                  <Button variant="contained" color="secondary">
+                    Learn More About Us
                   </Button>
                 </Box>
-
               </Stack>
             </motion.div>
           </Grid>

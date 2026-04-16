@@ -3,7 +3,7 @@ import { Box, Typography, Container, Button, Stack } from "@mui/material";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
-import turmericImage from "../../assets/import.jpg";
+import heroImage from "../../assets/img2.webp";
 
 const Hero = () => {
   return (
@@ -31,7 +31,7 @@ const Hero = () => {
           position: "absolute",
           inset: 0,
           zIndex: -2,
-          backgroundImage: `url(${turmericImage})`,
+          backgroundImage: `url(${heroImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           filter: "contrast(1.1) brightness(0.85)",
@@ -71,7 +71,7 @@ const Hero = () => {
 
       {/* 🔥 CONTENT */}
       <Container maxWidth="lg">
-        <Stack spacing={4} maxWidth={700}>
+        <Stack spacing={4} sx={{ maxWidth: 700 }}>
           {/* TAG */}
           <Typography
             sx={{

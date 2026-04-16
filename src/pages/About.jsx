@@ -1,17 +1,17 @@
 // src/pages/About.jsx
-import React from 'react';
-import { Container, Box } from '@mui/material';
-import AboutHero from '../sections/about/AboutHero'; // [cite: 8]
-import AboutVision from '../sections/about/AboutVision'; // [cite: 14]
-import JourneyTimeline from '../sections/about/JourneyTimeline'; // 
-import FoundersPerspective from '../sections/about/FoundersPerspective'; // [cite: 38]
-import OfficeLocations from '../sections/about/OfficeLocations'; // [cite: 51]
+import React from "react";
+import { Container, Box } from "@mui/material";
+import AboutHero from "../sections/about/AboutHero";
+import AboutVision from "../sections/about/AboutVision";
+import JourneyTimeline from "../sections/about/JourneyTimeline";
+import FoundersPerspective from "../sections/about/FoundersPerspective";
+import OfficeLocations from "../sections/about/OfficeLocations";
 
 const About = () => {
   return (
-    <Box sx={{ pb: 10 }}>
+    <Box sx={{ pb: { xs: 8, md: 12 } }}>
       <AboutHero />
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ mt: { xs: -5, md: -7 }, position: "relative", zIndex: 2 }}>
         <AboutVision />
         <JourneyTimeline />
         <FoundersPerspective />

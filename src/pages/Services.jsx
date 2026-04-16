@@ -1,17 +1,17 @@
 // src/pages/Services.jsx
-import React from 'react';
-import { Box, Container } from '@mui/material';
-import ServicesHero from '../sections/service/ServicesHero'; // [cite: 57]
-import AdvancedSolutions from '../sections/service/AdvancedSolutions'; // [cite: 18]
-import WorkProcess from '../sections/service/WorkProcess'; // [cite: 77]
-import ServicesSectionPage from '../sections/service/Servicessectionpage'; // [cite: 63]
-import ConsultationModal from '../sections/service/ConsultationModal'; // 
-import CTASection from '../sections/home/CTASection'; // [cite: 77]
+import React from "react";
+import { Box, Container } from "@mui/material";
+import ServicesHero from "../sections/service/ServicesHero";
+import AdvancedSolutions from "../sections/service/AdvancedSolutions";
+import WorkProcess from "../sections/service/WorkProcess";
+import ServicesSectionPage from "../sections/service/Servicessectionpage";
+import ConsultationModal from "../sections/service/ConsultationModal";
+import CTASection from "../sections/home/CTASection";
 const Services = () => {
   return (
-    <Box sx={{ pb: 8 }}>
+    <Box sx={{ pb: { xs: 8, md: 12 } }}>
       <ServicesHero />
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ mt: { xs: -4, md: -6 }, position: "relative", zIndex: 2 }}>
         <ServicesSectionPage />
         <AdvancedSolutions />
         <WorkProcess />

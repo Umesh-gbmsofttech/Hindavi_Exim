@@ -1,165 +1,80 @@
-import React, { useState } from "react";
-import { Box, Typography, Card, CardContent } from "@mui/material";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { motion } from "framer-motion";
+import React from "react";
+import { Box, Typography, Card, CardContent, Grid, Stack, Chip } from "@mui/material";
+import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
+import PublicOutlinedIcon from "@mui/icons-material/PublicOutlined";
+import SupportAgentOutlinedIcon from "@mui/icons-material/SupportAgentOutlined";
 
 const locations = [
   {
-    city: "Mumbai",
-    type: "Headquarters",
-    address: "BKC Export Zone, Mumbai, India",
+    title: "Sourcing Network",
+    text: "Vendor and product coordination managed through trusted sourcing relationships in India.",
+    icon: <Inventory2OutlinedIcon />,
   },
   {
-    city: "Pune",
-    type: "Operations Hub",
-    address: "MIDC Industrial Area, Pune, India",
+    title: "Export Coordination",
+    text: "Shipment planning, documentation flow, and movement updates aligned for international buyers.",
+    icon: <PublicOutlinedIcon />,
   },
   {
-    city: "Nashik",
-    type: "Manufacturing & Supply",
-    address: "Industrial Estate, Nashik, India",
+    title: "Partner Support",
+    text: "Responsive communication for inquiries, order progress, and trade coordination requirements.",
+    icon: <SupportAgentOutlinedIcon />,
   },
 ];
 
 const OfficeLocations = () => {
-  const [active, setActive] = useState(null);
-
   return (
-    <Box sx={{ py: 12, position: "relative" }}>
+    <Box sx={{ py: { xs: 8, md: 10 } }}>
+      <Stack spacing={2} alignItems="center" textAlign="center" sx={{ mb: 5 }}>
+        <Chip label="Operational Strength" color="secondary" sx={{ fontWeight: 700 }} />
+        <Typography variant="h3" sx={{ fontSize: { xs: "2rem", md: "3rem" }, color: "primary.main" }}>
+          Structured to support dependable export execution.
+        </Typography>
+        <Typography sx={{ color: "text.secondary", lineHeight: 1.8, maxWidth: 760 }}>
+          Instead of overloading the page with decorative motion, we focus on
+          the practical capabilities that make Hindavi Exim easier to trust and
+          easier to work with.
+        </Typography>
+      </Stack>
 
-      {/* TITLE */}
-      <Typography
-        variant="h3"
-        sx={{
-          mb: 8,
-          fontWeight: "bold",
-          textAlign: "center",
-        }}
-      >
-        Global Presence
-      </Typography>
-
-      {/* SNAKE LINE BACKGROUND */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: "50%",
-          left: "10%",
-          right: "10%",
-          height: "4px",
-          background:
-            "linear-gradient(90deg, #8B5A2B, #D2B48C, #8B5A2B)",
-          borderRadius: 5,
-          zIndex: 0,
-          opacity: 0.6,
-        }}
-      />
-
-      {/* DOTS ANIMATION */}
-      {locations.map((_, i) => (
-        <motion.div
-          key={i}
-          animate={{
-            x: [0, 300, 600],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 6,
-            ease: "linear",
-          }}
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "15%",
-            width: 12,
-            height: 12,
-            borderRadius: "50%",
-            background: "#8B5A2B",
-            zIndex: 1,
-          }}
-        />
-      ))}
-
-      {/* LOCATIONS */}
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          gap: 4,
-          position: "relative",
-          zIndex: 2,
-          flexWrap: "wrap",
-        }}
-      >
-        {locations.map((loc, index) => {
-          const isActive = active === index;
-
-          return (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              onMouseEnter={() => setActive(index)}
-              onMouseLeave={() => setActive(null)}
-              style={{ flex: 1, minWidth: 250 }}
+      <Grid container spacing={3}>
+        {locations.map((loc) => (
+          <Grid key={loc.title} size={{ xs: 12, md: 4 }}>
+            <Card
+              elevation={0}
+              sx={{
+                height: "100%",
+                borderRadius: 5,
+                border: "1px solid rgba(93,51,29,0.08)",
+                boxShadow: "0 16px 40px rgba(47,23,13,0.06)",
+              }}
             >
-              <Card
-                sx={{
-                  height: "100%",
-                  textAlign: "center",
-                  borderRadius: 4,
-                  cursor: "pointer",
-                  transition: "0.4s",
-                  boxShadow: isActive
-                    ? "0 20px 50px rgba(139,90,43,0.4)"
-                    : "0 8px 25px rgba(0,0,0,0.08)",
-                  border: "1px solid rgba(139,90,43,0.2)",
-                  position: "relative",
-                  overflow: "hidden",
-                  "&:before": isActive
-                    ? {
-                        content: '""',
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "4px",
-                        background: "#8B5A2B",
-                      }
-                    : {},
-                }}
-              >
-                <CardContent sx={{ py: 4 }}>
-                  <LocationOnIcon
-                    sx={{
-                      fontSize: 40,
-                      color: "#8B5A2B",
-                      mb: 2,
-                    }}
-                  />
-
-                  <Typography variant="h5" sx={{ fontWeight: "bold" }}>
-                    {loc.city}
-                  </Typography>
-
-                  <Typography
-                    variant="subtitle2"
-                    sx={{ color: "#8B5A2B", mb: 1 }}
-                  >
-                    {loc.type}
-                  </Typography>
-
-                  <Typography
-                    variant="body2"
-                    sx={{ color: "text.secondary" }}
-                  >
-                    {loc.address}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </motion.div>
-          );
-        })}
-      </Box>
+              <CardContent sx={{ p: 3.5 }}>
+                <Box
+                  sx={{
+                    mb: 2.2,
+                    width: 56,
+                    height: 56,
+                    display: "grid",
+                    placeItems: "center",
+                    borderRadius: 3,
+                    bgcolor: "rgba(217,137,54,0.12)",
+                    color: "secondary.dark",
+                  }}
+                >
+                  {loc.icon}
+                </Box>
+                <Typography variant="h5" sx={{ mb: 1.2, color: "primary.main" }}>
+                  {loc.title}
+                </Typography>
+                <Typography sx={{ color: "text.secondary", lineHeight: 1.85 }}>
+                  {loc.text}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
     </Box>
   );
 };

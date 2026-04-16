@@ -1,6 +1,5 @@
-// src/components/sections/ServicesHero.jsx
 import React from "react";
-import { Box, Typography, Container } from "@mui/material";
+import { Box, Typography, Container, Stack, Chip } from "@mui/material";
 import { motion } from "framer-motion";
 
 const ServicesHero = () => {
@@ -8,129 +7,62 @@ const ServicesHero = () => {
     <Box
       sx={{
         position: "relative",
-        background: "linear-gradient(180deg, #4a140a 0%, #1c0502 100%)",
         color: "#fff",
-        pt: { xs: 12, md: 14 },
-        pb: { xs: 10, md: 12 },
-        textAlign: "center",
+        pt: { xs: 14, md: 17 },
+        pb: { xs: 12, md: 15 },
         overflow: "hidden",
+        background: "linear-gradient(180deg, #31180e 0%, #1c0d07 100%)",
       }}
     >
-      {/* 🔥 Top Glow Line */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "60%",
-          height: "2px",
-          background:
-            "linear-gradient(90deg, transparent, #ff8a00, transparent)",
-          opacity: 0.6,
-        }}
-      />
-
-      {/* 🌟 Background Glow */}
-      <Box
-        sx={{
-          position: "absolute",
-          width: 500,
-          height: 500,
-          background: "rgba(255,138,0,0.12)",
-          filter: "blur(140px)",
-          top: -200,
-          left: "50%",
-          transform: "translateX(-50%)",
-        }}
-      />
-
-      {/* ✨ Subtle radial overlay */}
       <Box
         sx={{
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(circle at center, rgba(255,138,0,0.08), transparent 70%)",
+            "radial-gradient(circle at top, rgba(217,137,54,0.24), transparent 34%)",
         }}
       />
 
-      <Container maxWidth="md" sx={{ position: "relative", zIndex: 2 }}>
+      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
         <motion.div
-          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          initial={{ opacity: 0, y: 32, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.65 }}
         >
-          {/* SMALL TAG */}
-          <Typography
-            sx={{
-              color: "#ff8a00",
-              fontWeight: 700,
-              letterSpacing: 1,
-              fontSize: "0.9rem",
-              mb: 1,
-            }}
-          >
-            OUR SERVICES
-          </Typography>
-
-          {/* MAIN HEADING */}
-          <Typography
-            variant="h2"
-            sx={{
-              fontWeight: 900,
-              mb: 2,
-              letterSpacing: "-1px",
-            }}
-          >
-            Our Specialized Services
-          </Typography>
-
-          {/* SUBTEXT */}
-          <Typography
-            variant="h5"
-            sx={{
-              opacity: 0.75,
-              fontWeight: 300,
-              maxWidth: 650,
-              mx: "auto",
-              lineHeight: 1.6,
-            }}
-          >
-            Tailored import-export solutions designed to scale your business globally.
-          </Typography>
-        </motion.div>
-
-        {/* 🔥 Optional CTA (adds life to empty space) */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          <Box
-            sx={{
-              mt: 4,
-              display: "inline-flex",
-              alignItems: "center",
-              px: 3,
-              py: 1.3,
-              borderRadius: "10px",
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.1)",
-              backdropFilter: "blur(10px)",
-              cursor: "pointer",
-              transition: "all 0.3s",
-              "&:hover": {
-                background: "linear-gradient(135deg, #ff8a00, #ffb347)",
-                boxShadow: "0 10px 30px rgba(255,138,0,0.3)",
-                transform: "translateY(-2px)",
-              },
-            }}
-          >
-            <Typography sx={{ fontSize: "0.9rem", fontWeight: 500 }}>
-              Explore Services →
+          <Stack spacing={3} alignItems="center" textAlign="center" sx={{ maxWidth: 760, mx: "auto" }}>
+            <Chip
+              label="Services"
+              sx={{
+                bgcolor: "rgba(255,255,255,0.1)",
+                color: "common.white",
+                border: "1px solid rgba(255,255,255,0.14)",
+              }}
+            />
+            <Typography
+              variant="h2"
+              sx={{
+                fontSize: { xs: "2.5rem", md: "4.25rem" },
+                fontWeight: 800,
+                lineHeight: 1.02,
+                letterSpacing: "-0.04em",
+              }}
+            >
+              Export services designed to feel structured, not vague.
             </Typography>
-          </Box>
+            <Typography
+              variant="h6"
+              sx={{
+                maxWidth: 680,
+                color: "rgba(255,255,255,0.78)",
+                fontWeight: 400,
+                lineHeight: 1.8,
+              }}
+            >
+              From sourcing coordination to documentation support and shipment
+              readiness, our services are arranged around clarity, efficiency,
+              and buyer confidence.
+            </Typography>
+          </Stack>
         </motion.div>
       </Container>
     </Box>

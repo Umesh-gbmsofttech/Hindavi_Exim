@@ -75,7 +75,7 @@ const StatCard = ({ stat, index }) => {
   const count = useCounter(stat.value, isInView);
 
   return (
-    <Grid item xs={12} sm={6} md={3}>
+    <Grid size={{ xs: 12, sm: 6, md: 3 }}>
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 40 }}
