@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://hindavi.in/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://hindavi.in/</loc></url>
+  <url><loc>https://hindavi.in/about</loc></url>
+  <url><loc>https://hindavi.in/products</loc></url>
+  <url><loc>https://hindavi.in/products/turmeric</loc></url>
+  <url><loc>https://hindavi.in/products/tamarind</loc></url>
+  <url><loc>https://hindavi.in/turmeric-export-india</loc></url>
+  <url><loc>https://hindavi.in/tamarind-exporter-india</loc></url>
+  <url><loc>https://hindavi.in/export-process</loc></url>
+  <url><loc>https://hindavi.in/certifications</loc></url>
+  <url><loc>https://hindavi.in/blog</loc></url>
+  <url><loc>https://hindavi.in/blog/turmeric-export-from-india</loc></url>
+  <url><loc>https://hindavi.in/blog/tamarind-export-quality-standards</loc></url>
+  <url><loc>https://hindavi.in/blog/spice-export-documentation-guide</loc></url>
+  <url><loc>https://hindavi.in/contact</loc></url>
+  <url><loc>https://hindavi.in/privacy-policy</loc></url>
+  <url><loc>https://hindavi.in/terms-and-conditions</loc></url>
+  <url><loc>https://hindavi.in/shipping-policy</loc></url>
 </urlset>
