@@ -7,6 +7,11 @@ import Footer from "./layout/Footer";
 
 import Home from "./pages/Home";
 import Services from "./pages/Services";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+
+// ✅ Import scroll components
+import ScrollToTop from "./component/ui/ScrollToTop";
 
 const theme = createTheme({
   palette: {
@@ -23,10 +28,18 @@ const theme = createTheme({
 function App() {
   return (
     <Router>
+      <ScrollToTop />
+
       <ThemeProvider theme={theme}>
         <CssBaseline />
 
-        <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            minHeight: "100vh",
+          }}
+        >
           <Header />
 
           {/* Pages */}
@@ -34,10 +47,14 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </Box>
 
           <Footer />
+
+          
         </Box>
       </ThemeProvider>
     </Router>
