@@ -1,19 +1,47 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ThemeProvider, createTheme, CssBaseline, Box } from "@mui/material";
+
+import Header from "./layout/Header";
+import Footer from "./layout/Footer";
+
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+
+const theme = createTheme({
+  palette: {
+    primary: { main: "#4f2815" },
+    secondary: { main: "#d45637" },
+    background: { default: "#ffffff" },
+  },
+  typography: {
+    fontFamily: '"Inter", "Roboto", sans-serif',
+    h1: { fontWeight: 800 },
+  },
+});
+
 function App() {
   return (
-    <main className="app-shell">
-      <section className="welcome-card" aria-label="Welcome to Hindavi Exim">
-        <img
-          className="welcome-logo"
-          src="/logo.jpg"
-          alt="Hindavi Exim logo"
-          width="120"
-          height="120"
-        />
-        <p className="eyebrow">Official Website</p>
-        <h1>Welcome to Hindavi Exim</h1>
-      </section>
-    </main>
-  )
+    <Router>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+
+        <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+          <Header />
+
+          {/* Pages */}
+          <Box sx={{ flex: 1 }}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/services" element={<Services />} />
+            </Routes>
+          </Box>
+
+          <Footer />
+        </Box>
+      </ThemeProvider>
+    </Router>
+  );
 }
 
-export default App
+export default App;
