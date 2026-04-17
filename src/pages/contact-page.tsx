@@ -8,7 +8,7 @@ import { siteConfig } from "@/content/site"
 export function ContactPage() {
   return (
     <main>
-      <Seo title={`Contact | ${siteConfig.name}`} description="Contact Hindavi Export for turmeric and tamarind export inquiries, product requirements, packaging details, and shipment discussions." />
+      <Seo title={`Contact | ${siteConfig.name}`} description="Contact Hindavi Exim for turmeric and tamarind import export inquiries, product requirements, packaging details, and shipment discussions." />
       <PageHero
         eyebrow="Contact"
         title="Send us your product requirement and destination market."

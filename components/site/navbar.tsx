@@ -16,7 +16,7 @@ export function Navbar() {
       <Container className="flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
           <div className="relative h-11 w-11 overflow-hidden rounded-card border border-brand-accent/10 bg-brand-surface">
-            <img src="/images/logo.png" alt="Hindavi Export logo" className="h-full w-full object-contain p-1.5" />
+            <img src="/images/logo.png" alt="Hindavi Exim logo" className="h-full w-full object-contain p-1.5" />
           </div>
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.24em] text-brand-secondary">

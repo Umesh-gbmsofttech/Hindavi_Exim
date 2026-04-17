@@ -1,18 +1,18 @@
 export const siteConfig = {
-  name: "Hindavi Export",
-  legalName: "Hindavi Export",
+  name: "Hindavi Exim",
+  legalName: "Hindavi Exim",
   description:
-    "Hindavi Export supplies turmeric and tamarind from India with dependable quality control, export-grade packaging, and documentation support for global buyers.",
+    "Hindavi Exim is an India-based turmeric and tamarind import export business supplying export-ready whole, powder, pulp, and seedless formats with packaging and documentation support for global buyers.",
   url: "https://hindavi.in",
   email: "exports@hindavi.in",
   whatsapp: "https://wa.me/919999999999?text=Hello%20Hindavi%20Export%2C%20I%20need%20a%20quote%20for%20turmeric%20or%20tamarind.",
   location: "India",
   phone: "+91 99999 99999",
   hero: {
-    eyebrow: "Turmeric & Tamarind Exporter from India",
-    title: "Reliable turmeric and tamarind exports for importers, distributors, and private-label buyers.",
+    eyebrow: "Turmeric & Tamarind Import Export from India",
+    title: "Turmeric and tamarind supply from India for importers, distributors, and food buyers worldwide.",
     description:
-      "We help global buyers source clean, traceable spice products with practical packaging options, consistent quality parameters, and export documentation support."
+      "We supply turmeric fingers, turmeric powder, tamarind blocks, seedless tamarind, and tamarind pulp with export-ready packaging, quality checks, and shipment documentation support."
   }
 } as const
 
@@ -39,10 +39,10 @@ export const productData = {
     seoSlug: "turmeric-export-india",
     name: "Turmeric",
     shortDescription:
-      "Indian turmeric offered for global food, spice, and ingredient buyers who need consistent curcumin levels and clean presentation.",
-    heroImage: "/images/turmeric-fingers.webp",
+      "India-origin turmeric for importers who need turmeric fingers, powder, curcumin consistency, and clean export-ready presentation.",
+    heroImage: "/images/turmeric.png",
     intro:
-      "Our turmeric portfolio is built for export buyers who need dependable quality, commercial consistency, and flexible packaging for wholesale or private-label programs.",
+      "Our turmeric portfolio is built for food importers, spice distributors, and bulk buyers who need dependable quality, commercial consistency, and flexible packaging for import-export programs.",
     types: [
       "Turmeric fingers",
       "Turmeric powder",
@@ -74,10 +74,10 @@ export const productData = {
     seoSlug: "tamarind-exporter-india",
     name: "Tamarind",
     shortDescription:
-      "Seedless, deseeded, and pulp-format tamarind products for importers seeking reliable acidity, texture, and hygienic packing.",
-    heroImage: "/images/tamarind-pulp.webp",
+      "Seedless, deseeded, and pulp-format tamarind products for importers seeking reliable acidity, texture, and hygienic export packing.",
+    heroImage: "/images/tamarind.png",
     intro:
-      "We supply tamarind in formats suited to food manufacturers, spice buyers, and ethnic retail channels, with close attention to hygiene, packing integrity, and commercial usability.",
+      "We supply tamarind in formats suited to food manufacturers, wholesalers, and international buyers, with close attention to hygiene, packing integrity, and commercial usability.",
     types: [
       "Seedless tamarind",
       "Deseeded tamarind block",
@@ -110,12 +110,12 @@ export const whyChooseUs = [
   {
     title: "Quality discipline",
     description:
-      "We focus on product consistency, moisture control awareness, and cleaner batch presentation before shipment."
+      "We focus on clean turmeric and tamarind presentation, moisture awareness, and dependable lot consistency before shipment."
   },
   {
     title: "Buyer-first packaging",
     description:
-      "Bulk and retail formats can be aligned to your distribution channel, private-label plan, and shipping needs."
+      "Bulk and retail formats can be aligned to your import program, destination market, and shipping needs."
   },
   {
     title: "Export support",
@@ -130,18 +130,18 @@ export const whyChooseUs = [
 ]
 
 export const exportCapabilities = [
-  "Bulk turmeric and tamarind supply",
-  "Custom packing configurations",
-  "Container and pallet loading coordination",
+  "Bulk turmeric fingers and turmeric powder supply",
+  "Seedless tamarind, tamarind block, and pulp supply",
+  "Custom packing configurations for import programs",
   "Documentation support for export shipments",
-  "Private-label and importer-ready supply programs",
+  "Importer-ready shipment planning and loading support",
   "Responsive follow-up for repeat orders"
 ]
 
 export const testimonials = [
   {
     quote:
-      "Hindavi Export presented product details clearly and kept communication structured, which made our initial sourcing cycle smoother.",
+      "Hindavi Exim presented product details clearly and kept communication structured, which made our initial sourcing cycle smoother.",
     name: "Procurement Manager",
     company: "Middle East Food Importer"
   },
@@ -218,7 +218,7 @@ export const blogPosts = [
       "A practical guide to curcumin, moisture, grading, packaging, and exporter communication when sourcing turmeric from India.",
     category: "Turmeric",
     date: "2026-04-16",
-    heroImage: "/images/turmeric-fingers.webp",
+    heroImage: "/images/turmeric.png",
     content: [
       "India remains one of the most important turmeric sourcing origins for global buyers, but commercial success depends on more than origin alone. Importers need clear visibility into grade, curcumin expectations, appearance, moisture, and packaging before committing to supply.",
       "When evaluating turmeric for export, start with intended use. Retail, horeca, and industrial buyers often need different particle size, color profile, and packing formats. Clear exporter communication around these points reduces disputes later.",
@@ -233,7 +233,7 @@ export const blogPosts = [
       "Understand the quality signals importers look for when buying tamarind pulp, seedless tamarind, and block formats from India.",
     category: "Tamarind",
     date: "2026-04-16",
-    heroImage: "/images/tamarind-pulp.webp",
+    heroImage: "/images/tamarind.png",
     content: [
       "Tamarind is evaluated by international buyers for texture, hygiene, acidity profile, and packing integrity. Even small differences in handling can affect how the product performs in retail or food manufacturing environments.",
       "One of the first discussions should be product format. Seedless tamarind, pulp, and compressed blocks each serve different use cases. Importers should confirm whether fiber, seeds, and pack weight tolerance match their operational needs.",
@@ -248,7 +248,7 @@ export const blogPosts = [
       "Documentation is one of the biggest trust signals in B2B export. This guide explains the paperwork flow buyers should expect.",
     category: "Documentation",
     date: "2026-04-16",
-    heroImage: "/images/logistics.webp",
+    heroImage: "/images/hero.png",
     content: [
       "In export trade, documentation quality often influences buyer confidence as much as the goods themselves. Clear paperwork reduces delays, supports customs processing, and makes supplier relationships easier to scale.",
       "For turmeric and tamarind shipments, buyers usually expect clarity around invoice details, packing list information, shipping coordination, and any relevant compliance references attached to the shipment.",
@@ -262,7 +262,7 @@ export const legalContent = {
   privacyPolicy: {
     title: "Privacy Policy",
     body: [
-      "Hindavi Export collects contact and inquiry information submitted through the website only for business communication, quotation support, and export discussions.",
+      "Hindavi Exim collects contact and inquiry information submitted through the website only for business communication, quotation support, and export discussions.",
       "We do not sell inquiry data. Information may be stored securely to help us respond to buyers, maintain trade records, and follow up on product requirements.",
       "If you want us to remove previously shared information, contact us at exports@hindavi.in."
     ]
@@ -280,7 +280,7 @@ export const legalContent = {
     body: [
       "Shipment schedules depend on order quantity, product format, packaging, and destination market requirements.",
       "Dispatch timelines are confirmed during order finalization. Export documentation and logistics planning are aligned to the agreed commercial terms.",
-      "For detailed lead-time estimates, buyers should contact Hindavi Export directly with product and destination details."
+      "For detailed lead-time estimates, buyers should contact Hindavi Exim directly with product and destination details."
     ]
   }
 } as const

@@ -12,7 +12,7 @@ const buttonVariants = cva(
         primary:
           "bg-brand-primary text-white hover:bg-brand-primary/90 shadow-soft",
         secondary:
-          "bg-brand-secondary text-brand-accent hover:bg-brand-secondary/90 shadow-soft",
+          "bg-brand-secondary text-white hover:bg-brand-secondary/90 shadow-soft",
         outline:
           "border border-brand-primary/20 bg-white text-brand-primary hover:border-brand-primary hover:bg-brand-primary/5",
         ghost: "text-brand-primary hover:bg-brand-primary/5"

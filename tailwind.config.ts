@@ -10,11 +10,11 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          primary: "#1B5E20",
-          secondary: "#F9A825",
-          accent: "#5D4037",
-          surface: "#F8F6F1",
-          ink: "#17201A"
+          primary: "#3f5825",
+          secondary: "#48642a",
+          accent: "#5b3a2c",
+          surface: "#f8f1e4",
+          ink: "#1f140f"
         }
       },
       boxShadow: {
@@ -26,7 +26,7 @@ const config: Config = {
       },
       backgroundImage: {
         "hero-overlay":
-          "linear-gradient(120deg, rgba(11, 31, 13, 0.86), rgba(27, 94, 32, 0.72))"
+          "linear-gradient(120deg, rgba(31, 20, 15, 0.86), rgba(63, 88, 37, 0.78))"
       }
     }
   },

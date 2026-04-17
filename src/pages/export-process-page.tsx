@@ -6,7 +6,7 @@ import { Container } from "@/components/site/container"
 export function ExportProcessPage() {
   return (
     <main>
-      <Seo title={`Export Process | ${siteConfig.name}`} description="Understand how Hindavi Export manages sourcing, quality checks, packaging, logistics, and export documentation." />
+      <Seo title={`Export Process | ${siteConfig.name}`} description="Understand how Hindavi Exim manages sourcing, quality checks, packaging, logistics, and export documentation." />
       <PageHero
         eyebrow="Export process"
         title="An export workflow designed for transparency and repeatability."

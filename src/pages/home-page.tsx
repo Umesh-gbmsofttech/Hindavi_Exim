@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Globe2, Package, BadgeCheck, ArrowRight, FileText, Warehouse } from "lucide-react"
 import { Container } from "@/components/site/container"
@@ -19,12 +20,30 @@ import { Reveal } from "@/components/site/reveal"
 import { Seo } from "@/src/components/seo"
 
 const capabilityIcons = [Globe2, Package, FileText, Warehouse, BadgeCheck, ArrowRight]
+const leftBlockCapabilities = exportCapabilities.slice(0, 4)
+const bottomCapabilities = exportCapabilities.slice(4)
+const heroQuickFacts = [
+  ["Core products", "Turmeric & tamarind"],
+  ["Packaging", "Import-export ready packs"],
+  ["Support", "Export documents and dispatch coordination"],
+  ["Buyer fit", "Importers, wholesalers, food buyers"]
+] as const
 
 export function HomePage() {
+  const [activeInfoCard, setActiveInfoCard] = useState(0)
+  const [glow, setGlow] = useState({ x: 50, y: 50, active: false })
+
+  const handlePointerMove = (event: React.MouseEvent<HTMLElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect()
+    const x = ((event.clientX - rect.left) / rect.width) * 100
+    const y = ((event.clientY - rect.top) / rect.height) * 100
+    setGlow({ x, y, active: true })
+  }
+
   return (
     <main>
       <Seo
-        title="Turmeric & Tamarind Exporter from India | Hindavi Export"
+        title="Turmeric & Tamarind Import Export from India | Hindavi Exim"
         description={siteConfig.description}
       />
       <JsonLd
@@ -38,19 +57,26 @@ export function HomePage() {
           sameAs: [siteConfig.whatsapp]
         }}
       />
-      <section className="relative overflow-hidden bg-brand-ink text-white">
+      <section
+        className="relative min-h-screen overflow-hidden bg-brand-ink bg-cover bg-center bg-fixed text-white"
+        style={{ backgroundImage: "url('/images/hero.png')" }}
+        onMouseMove={handlePointerMove}
+        onMouseLeave={() => setGlow((prev) => ({ ...prev, active: false }))}
+      >
         <div className="absolute inset-0 bg-hero-overlay" />
-        <img
-          src="/images/hero.webp"
-          alt="Hindavi Export hero"
-          className="absolute inset-0 h-full w-full object-cover opacity-30"
+        <div
+          className="pointer-events-none absolute inset-0 transition-opacity duration-300"
+          style={{
+            opacity: glow.active ? 0.8 : 0.35,
+            background: `radial-gradient(440px circle at ${glow.x}% ${glow.y}%, rgba(255,255,255,0.2), rgba(255,255,255,0.08) 30%, transparent 65%)`
+          }}
         />
-        <Container className="relative grid gap-12 py-20 pb-16 md:py-28 md:pb-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <Container className="relative grid min-h-screen gap-12 py-20 pb-16 md:py-24 md:pb-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="max-w-3xl space-y-6">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-secondary">
               {siteConfig.hero.eyebrow}
             </p>
-            <h1 className="text-balance text-4xl font-semibold leading-tight md:text-6xl">
+            <h1 className="text-balance text-4xl font-semibold tracking-tight md:text-5xl">
               {siteConfig.hero.title}
             </h1>
             <p className="max-w-2xl text-base leading-8 text-white/80 md:text-lg">
@@ -63,7 +89,7 @@ export function HomePage() {
                 </Button>
               </Link>
               <Link to="/products">
-                  <Button
+                <Button
                   asChild
                   variant="outline"
                   size="lg"
@@ -78,16 +104,21 @@ export function HomePage() {
           <Reveal className="lg:justify-self-end">
             <div className="rounded-section border border-white/10 bg-white/10 p-5 backdrop-blur sm:p-6">
               <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  ["Core products", "Turmeric & tamarind"],
-                  ["Packaging", "Bulk and retail-ready"],
-                  ["Support", "Export documents and dispatch coordination"],
-                  ["Buyer fit", "Importers, distributors, private label"]
-                ].map(([label, value]) => (
-                  <div key={label} className="rounded-card border border-white/10 bg-white/5 p-4 sm:min-h-[122px]">
+                {heroQuickFacts.map(([label, value], index) => (
+                  <button
+                    key={label}
+                    type="button"
+                    onMouseEnter={() => setActiveInfoCard(index)}
+                    onFocus={() => setActiveInfoCard(index)}
+                    onClick={() => setActiveInfoCard(index)}
+                    className={`rounded-card border p-4 text-left transition duration-200 sm:min-h-[122px] ${activeInfoCard === index
+                      ? "border-white/30 bg-white/20 shadow-lg"
+                      : "border-white/10 bg-white/5 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/15"
+                      }`}
+                  >
                     <p className="text-xs uppercase tracking-[0.22em] text-white/55">{label}</p>
                     <p className="mt-2 text-base font-medium leading-7 text-white">{value}</p>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
@@ -104,18 +135,18 @@ export function HomePage() {
       <section className="py-16">
         <Container className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div className="min-h-[320px] overflow-hidden rounded-section shadow-soft md:min-h-[420px]">
-            <img src="/images/quality-check.webp" alt="Quality inspection" className="h-full w-full object-cover" />
+            <img src="/images/turmeric.png" alt="Turmeric export product" className="h-full w-full object-cover" />
           </div>
           <div className="space-y-6">
             <SectionHeading
-              eyebrow="About Hindavi Export"
-              title="A cleaner, export-focused partner for turmeric and tamarind buyers."
-              description="We position our business around what serious importers care about: product consistency, practical packaging, export handling, and communication that keeps shipments moving."
+              eyebrow="About Hindavi Exim"
+              title="A turmeric and tamarind import-export partner built for serious buyers."
+              description="We position our business around what importers care about most: product consistency, practical packaging, export handling, and communication that keeps shipments moving."
             />
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
               {[
-                "Wholesale and distributor supply",
-                "Private-label support",
+                "Turmeric and tamarind sourcing",
+                "Bulk import-order support",
                 "Export-grade packing discussion",
                 "Shipment and document coordination"
               ].map((item) => (
@@ -124,7 +155,7 @@ export function HomePage() {
                 </div>
               ))}
             </div>
-            <Link to="/about">
+            <Link to="/about" className="inline-block">
               <Button asChild>Read Company Overview</Button>
             </Link>
           </div>
@@ -178,29 +209,40 @@ export function HomePage() {
       </section>
 
       <section className="py-16">
-        <Container className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-          <div className="space-y-8">
-            <SectionHeading
-              eyebrow="Export Capabilities"
-              title="What buyers can expect across sourcing, packing, and shipment handling."
-              description="We keep capability statements specific so your sourcing team can quickly assess fit."
-            />
-            <div className="grid gap-4 sm:grid-cols-2">
-              {exportCapabilities.map((item, index) => {
-                const Icon = capabilityIcons[index] ?? BadgeCheck
-                return (
-                  <div key={item} className="flex items-start gap-3 rounded-card border border-brand-accent/10 bg-white p-4 shadow-soft">
-                    <div className="rounded-card bg-brand-surface p-2 text-brand-primary">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <p className="text-sm leading-7 text-brand-accent/80">{item}</p>
+        <Container className="space-y-8">
+          <SectionHeading
+            eyebrow="Export Capabilities"
+            title="What buyers can expect across sourcing, packing, and shipment handling."
+            description="We keep capability statements specific so your sourcing team can quickly assess fit."
+          />
+
+          <div className="grid gap-4 lg:grid-cols-3 lg:auto-rows-fr">
+            {leftBlockCapabilities.map((item, index) => {
+              const Icon = capabilityIcons[index] ?? BadgeCheck
+              return (
+                <div key={item} className="flex items-start gap-3 rounded-card border border-brand-accent/10 bg-white p-4 shadow-soft">
+                  <div className="rounded-card bg-brand-surface p-2 text-brand-primary">
+                    <Icon className="h-5 w-5" />
                   </div>
-                )
-              })}
+                  <p className="text-sm leading-7 text-brand-accent/80">{item}</p>
+                </div>
+              )
+            })}
+            <div className="min-h-[240px] overflow-hidden rounded-section shadow-soft lg:col-start-3 lg:row-start-1 lg:row-span-2 lg:min-h-full">
+              <img src="/images/tamarind.png" alt="Tamarind export product" className="h-full w-full object-cover" />
             </div>
-          </div>
-          <div className="min-h-[360px] overflow-hidden rounded-section shadow-soft">
-            <img src="/images/logistics.webp" alt="Logistics and shipment planning" className="h-full w-full object-cover" />
+
+            {bottomCapabilities.map((item, index) => {
+              const Icon = capabilityIcons[index + 4] ?? BadgeCheck
+              return (
+                <div key={item} className="flex h-full items-start gap-3 rounded-card border border-brand-accent/10 bg-white p-4 shadow-soft lg:col-span-1">
+                  <div className="rounded-card bg-brand-surface p-2 text-brand-primary">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <p className="text-sm leading-7 text-brand-accent/80">{item}</p>
+                </div>
+              )
+            })}
           </div>
         </Container>
       </section>

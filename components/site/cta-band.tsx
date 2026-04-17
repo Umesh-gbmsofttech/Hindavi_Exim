@@ -23,7 +23,7 @@ export function CtaBand() {
             </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:justify-end">
               <Link to="/contact">
-                <Button asChild variant="secondary" size="lg" className="w-full sm:w-auto">
+                <Button asChild variant="outline" size="lg" className="w-full border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white sm:w-auto">
                   Get Quote
                 </Button>
               </Link>

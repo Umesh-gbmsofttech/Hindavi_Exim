@@ -7,7 +7,7 @@ import { productData, siteConfig } from "@/content/site"
 export function ProductsPage() {
   return (
     <main>
-      <Seo title={`Products | ${siteConfig.name}`} description="Explore Hindavi Export turmeric and tamarind products, including specifications, packaging options, and export standards." />
+      <Seo title={`Products | ${siteConfig.name}`} description="Explore Hindavi Exim turmeric and tamarind products, including specifications, packaging options, and export standards." />
       <PageHero
         eyebrow="Products"
         title="Turmeric and tamarind products prepared for global trade."

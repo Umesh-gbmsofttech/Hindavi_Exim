@@ -8,11 +8,11 @@ import { siteConfig } from "@/content/site"
 export function AboutPage() {
   return (
     <main>
-      <Seo title={`About | ${siteConfig.name}`} description="Learn how Hindavi Export supports turmeric and tamarind buyers with sourcing clarity, export packaging, and dependable trade execution." />
+      <Seo title={`About | ${siteConfig.name}`} description="Learn how Hindavi Exim supports turmeric and tamarind importers with sourcing clarity, export packaging, and dependable trade execution." />
       <PageHero
         eyebrow="About"
-        title="A focused export company built around quality, responsiveness, and practical trade support."
-        description="Hindavi Export serves buyers who need turmeric and tamarind sourced from India with clear specifications, packaging confidence, and smooth shipment coordination."
+        title="A focused turmeric and tamarind import-export company built around quality and responsiveness."
+        description="Hindavi Exim serves buyers who need turmeric and tamarind sourced from India with clear specifications, packaging confidence, and smooth shipment coordination."
       />
 
       <section className="py-16">
@@ -20,15 +20,15 @@ export function AboutPage() {
           <div className="space-y-6">
             <SectionHeading
               eyebrow="Company overview"
-              title="Professional presentation, export discipline, and buyer-focused execution."
-              description="We designed Hindavi Export to reflect how international trade decisions are made: with attention to consistency, standards, and clarity in every stage of communication."
+              title="Professional presentation, product discipline, and buyer-focused execution."
+              description="We built Hindavi Exim to reflect how turmeric and tamarind import-export decisions are made: with attention to consistency, standards, and clarity in every stage of communication."
             />
             <p className="text-base leading-8 text-brand-accent/80">
-              Our business intent is straightforward. We supply turmeric and tamarind products for importers, distributors, and private-label buyers who need reliable information before they commit to an order.
+              Our business intent is straightforward. We supply turmeric and tamarind products for importers, distributors, and food buyers who need reliable information before they commit to an order.
             </p>
           </div>
           <div className="min-h-[340px] overflow-hidden rounded-section shadow-soft">
-            <img src="/images/warehouse.webp" alt="Hindavi Export infrastructure" className="h-full w-full object-cover" />
+            <img src="/images/hero.jpeg" alt="Hindavi Exim turmeric and tamarind business" className="h-full w-full object-cover" />
           </div>
         </Container>
       </section>
@@ -47,7 +47,7 @@ export function AboutPage() {
             <div className="rounded-section border border-brand-accent/10 bg-brand-surface p-8 shadow-soft">
               <h2 className="text-3xl font-semibold text-brand-ink">Vision</h2>
               <p className="mt-4 text-base leading-8 text-brand-accent/80">
-                To become a trusted export partner for spice and ingredient buyers who value commercial clarity, reliability, and long-term sourcing confidence.
+                To become a trusted turmeric and tamarind import-export partner for buyers who value commercial clarity, reliability, and long-term sourcing confidence.
               </p>
             </div>
           </Reveal>

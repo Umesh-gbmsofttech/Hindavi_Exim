@@ -6,7 +6,7 @@ import { Container } from "@/components/site/container"
 export function CertificationsPage() {
   return (
     <main>
-      <Seo title={`Certifications | ${siteConfig.name}`} description="Review the certification and compliance positioning that supports Hindavi Export turmeric and tamarind supply programs." />
+      <Seo title={`Certifications | ${siteConfig.name}`} description="Review the certification and compliance positioning that supports Hindavi Exim turmeric and tamarind supply programs." />
       <PageHero
         eyebrow="Certifications"
         title="Quality and compliance positioning that matters to international buyers."
