@@ -28,7 +28,7 @@ export function AboutPage() {
             </p>
           </div>
           <div className="min-h-[340px] overflow-hidden rounded-section shadow-soft">
-            <img src="/images/hero.jpeg" alt="Hindavi Exim turmeric and tamarind business" className="h-full w-full object-cover" />
+            <img src="/images/hero.png" alt="Hindavi Exim turmeric and tamarind business" className="h-full w-full object-cover" />
           </div>
         </Container>
       </section>
